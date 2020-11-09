@@ -6,7 +6,9 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc",
+    "play": "node dist/index.js"
   },
   "devDependencies": {
     "@types/config": "0.0.36",

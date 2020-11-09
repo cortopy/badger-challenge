@@ -9,7 +9,7 @@ import {
   ORIENTATION,
   INSTRUCTION,
   GridCoordinates,
-  RobotInitialPosition,
+  RobotPosition,
   MarsGrid,
   RobotBlock,
   Input,
@@ -76,7 +76,7 @@ function robotPosition(x: string) {
         sequenceTE(
           coordinates([x[0], x[1]].join(" ")),
           orientationOf(x[2])
-        ) as E.Either<string, RobotInitialPosition>
+        ) as E.Either<string, RobotPosition>
     )
   );
 }

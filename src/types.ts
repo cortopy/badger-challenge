@@ -1,7 +1,7 @@
 export enum ORIENTATION {
   NORTH,
-  SOUTH,
   EAST,
+  SOUTH,
   WEST,
 }
 
@@ -15,17 +15,19 @@ export type GridCoordinates = [number, number];
 export type MarsGrid = [[0, 0], GridCoordinates];
 export type InstructionList = Array<INSTRUCTION>;
 
-export interface RobotInitialPosition {
-  coordinates: GridCoordinates;
-  orientation: ORIENTATION;
-}
+export type RobotPosition = [GridCoordinates, ORIENTATION];
 
 export interface RobotBlock {
-  position: RobotInitialPosition;
+  position: RobotPosition;
   instructions: InstructionList;
 }
 
 export interface Input {
   grid: MarsGrid;
   robots: RobotBlock[];
+}
+
+export interface Output {
+  position: RobotPosition;
+  hasFallen: boolean;
 }
